@@ -1,0 +1,18 @@
+<html>
+<script>
+	var id = 0;
+	var images = ["images/f1.jpg", "images/f2.jpg", "images/f3.jpg"]
+	function next() {
+		id++; if(id >= images.length) id = 0;
+		var src = images[id];
+		document.getElementById("resim").src = src;
+	}
+</script>
+<body>Hello
+<br />
+<a href="javascript:next();">
+<img id="resim" src="images/f2.jpg" />
+</a>
+<br />
+<a href="android:makebackground $1">Make Background</a>
+</body></html>
