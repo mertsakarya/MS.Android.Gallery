@@ -18,12 +18,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 		String workingFileYo = "index.html";
 		String resultsPageUrl = "file:///android_asset/photoSwipe/" + workingFileYo;
-        WebView wv = (WebView) findViewById(R.id.webView1);
-        wv.addJavascriptInterface(new JavascriptInterface(wv), "Android");
-        WebSettings webSettings = wv.getSettings();
+        WebView webView = (WebView) findViewById(R.id.webView1);
+        webView.addJavascriptInterface(new JavascriptInterface(webView), "Android");
+        webView.setWebViewClient(new galleryWebClient());
+        WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setAllowFileAccess(true);
-		wv.loadUrl(resultsPageUrl);
+        webView.loadUrl(resultsPageUrl);
     }
 
     @Override
